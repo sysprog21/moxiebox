@@ -1,10 +1,10 @@
-# Motivation
+# moxiebox
 
-This is a sandbox, in the spirit of Cloudius Systems' OSv.
+## Motivation
 
-The goal is to provide a secure, sandboxed execution mechanism that
-enables deterministic input, processing and output.  Execution is
-separated out into distinct phases:
+The goal of moxiebox is to provide a secure, sandboxed execution
+mechanism that enables deterministic input, processing and output.
+Execution is separated out into distinct phases:
 
 1. Prepare and load hash-sealed program executables, data.
 2. Execute program as a black box, with no I/O capability.
@@ -32,6 +32,8 @@ hand-built memory map.
 More info about the Moxie architecture may be found at
 http://moxielogic.org/blog/pages/architecture.html and
 http://moxielogic.org/blog/ .
+
+## Usage
 
 Example usage:
 
@@ -72,3 +74,9 @@ And, in a separate console, run GDB to connect to sandbox using the
     0x14cc : lda.l $r3, 0x1644
     0x14d2 : lda.l $r2, 0x1648
     (gdb)
+
+
+## Licensing
+`moxiebox` is freely redistributable under MIT X License.
+Use of this source code is governed by the license that can be found
+in the `LICENSE` file.
