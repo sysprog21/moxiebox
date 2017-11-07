@@ -26,11 +26,12 @@ From the sandbox's point of view, the application is running as an
 unpriv'd application with only the ability to access data within the
 hand-built memory map.
 
-More info about the Moxie architecture may be found at
-http://moxielogic.org/blog/pages/architecture.html and
-http://moxielogic.org/blog/ .
+More info about the Moxie architecture may be found as following:
+* [Moxie Architecture](http://moxielogic.org/blog/pages/architecture.html)
+* [Moxie Blog](http://moxielogic.org/blog)
 
-## Usage
+
+## Prerequisites
 
 You will need to build and install moxie binutils+gcc cross-compiler
 toolchain first. It is suggested using derived [crosstool-ng](https://github.com/jserv/crosstool-ng):
@@ -50,6 +51,20 @@ from scratch, you will get GNU toolchain for Moxiebox in directory
 `$HOME/x-tools/moxie-none-moxiebox`. You can update `$PATH` via:
 
     source envsetup
+
+
+## Build and verify sandbox
+
+Once Moxiebox toolchain is properly installed, simply build with GNU make:
+
+    make
+
+And verify:
+
+    make check
+
+
+## Usage
 
 Example usage of sandbox:
 
