@@ -18,9 +18,6 @@ This program is built using the "moxiebox" target in upstream binutils
 and gcc.  A reduced (C-only) gcc toolchain is therefore available for
 immediate use by developers.
 
-You will need to build and install moxie binutils+gcc cross-compiler
-toolchain first.
-
 From the Moxie program's point of view, it is a single thread running
 as root and is essentially the entire operating system kernel +
 application, all in a single wrapper.
@@ -35,7 +32,26 @@ http://moxielogic.org/blog/ .
 
 ## Usage
 
-Example usage:
+You will need to build and install moxie binutils+gcc cross-compiler
+toolchain first. It is suggested using derived [crosstool-ng](https://github.com/jserv/crosstool-ng):
+
+    git clone https://github.com/jserv/crosstool-ng
+    ./bootstrap
+    ./configure
+    make
+    make install
+    mkdir -p ~/build-toolchain
+    cd ~/build-toolchain
+    ct-ng moxie-none-moxiebox
+    ct-ng build
+
+After [crosstool-NG](https://crosstool-ng.github.io/docs/) builds everything
+from scratch, you will get GNU toolchain for Moxiebox in directory
+`$HOME/x-tools/moxie-none-moxiebox`. You can update `$PATH` via:
+
+    source envsetup
+
+Example usage of sandbox:
 
     $ ./sandbox \
           -e runtime/test1 \
