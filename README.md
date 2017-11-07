@@ -68,7 +68,7 @@ And verify:
 
 Example usage of sandbox:
 
-    $ ./sandbox \
+    $ src/sandbox \
           -e runtime/test1 \
           -d mydata.json \
           -d mydata2.dat \
@@ -77,7 +77,7 @@ Example usage of sandbox:
 If you specify the -g <port> option, then sandbox will wait for a GDB
 connection on the given port.  For example, run sandbox like so:
 
-    $ ./sandbox -e ./basic -g 9999
+    $ src/sandbox -e tests/basic -g 9999
     ep 00001000
     ro 00000f6c-00001536 elf0
     ro 00001538-00001540 elf1
@@ -88,7 +88,7 @@ connection on the given port.  For example, run sandbox like so:
 And, in a separate console, run GDB to connect to sandbox using the
 `target remote` command like so:
 
-    $ moxie-none-moxiebox-gdb -q basic
+    $ moxie-none-moxiebox-gdb -q tests/basic
     Reading symbols from basic...done.
     (gdb) target remote :9999
     Remote debugging using :9999
