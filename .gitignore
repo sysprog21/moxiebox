@@ -1,0 +1,10 @@
+lib/
+*.o
+*.o.d
+runtime/libsandboxrt.a
+src/sandbox
+tests/basic
+tests/exit0
+tests/exit1
+tests/rtlib
+tests/sha256
