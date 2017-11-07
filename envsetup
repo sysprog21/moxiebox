@@ -1,1 +1,1 @@
-export PATH=$HOME/x-tools/moxie-unknown-moxiebox/bin:$PATH
+export PATH=$HOME/x-tools/moxie-none-moxiebox/bin:$PATH

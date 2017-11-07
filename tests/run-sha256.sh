@@ -16,7 +16,7 @@ cmp -s $TFN $BFN
 RET=$?
 
 echo
-moxie-unknown-moxiebox-gprof -l sha256
+moxie-none-moxiebox-gprof -l sha256
 
 rm -f $TFN gmon.out
 

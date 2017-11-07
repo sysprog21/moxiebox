@@ -1,9 +1,9 @@
 TOPTARGETS := all clean
 
 EXECUTABLES = \
-	moxie-unknown-moxiebox-gcc \
-	moxie-unknown-moxiebox-gprof \
-	moxie-unknown-moxiebox-gdb
+	moxie-none-moxiebox-gcc \
+	moxie-none-moxiebox-gprof \
+	moxie-none-moxiebox-gdb
 CHECK := $(foreach exec,$(EXECUTABLES),\
 	$(if $(shell PATH=$(PATH) which $(exec)),some string,$(error "No $(exec) in PATH)))
 

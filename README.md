@@ -55,7 +55,7 @@ connection on the given port.  For example, run sandbox like so:
 And, in a separate console, run GDB to connect to sandbox using the
 `target remote` command like so:
 
-    $ moxie-unknown-moxiebox-gdb -q basic
+    $ moxie-none-moxiebox-gdb -q basic
     Reading symbols from basic...done.
     (gdb) target remote :9999
     Remote debugging using :9999
