@@ -39,5 +39,14 @@ $(TARGET): $(OBJS)
 clean:
 	$(RM) $(OBJS) $(TARGET) $(deps)
 
+# Formal verification
+CBMCH = $(shell cbmc --help)
+CBMCFLAGS = \
+	--unwind 8 --partial-loops --bounds-check --pointer-check \
+	--div-by-zero-check --signed-overflow-check
+
+verify: sha256.c sha256_test.c
+	cbmc $? -DSELF_TEST $(CBMCFLAGS) $(findstring --memory-leak-check,$(CBMCH))
+
 -include $(deps)
 -include ../config.mk
