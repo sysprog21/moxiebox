@@ -26,6 +26,8 @@ From the sandbox's point of view, the application is running as an
 unpriv'd application with only the ability to access data within the
 hand-built memory map.
 
+Check [sandbox execution environment](sandbox-design.md) for details.
+
 More info about the Moxie architecture may be found as following:
 * [Moxie Architecture](http://moxielogic.org/blog/pages/architecture.html)
 * [Moxie Blog](http://moxielogic.org/blog)
@@ -108,6 +110,7 @@ And, in a separate console, run GDB to connect to sandbox using the
 
 
 ## Licensing
+
 `moxiebox` is freely redistributable under MIT X License.
 Use of this source code is governed by the license that can be found
 in the `LICENSE` file.
