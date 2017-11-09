@@ -1,3 +1,4 @@
+core
 lib/
 *.o
 *.o.d
