@@ -450,7 +450,7 @@ static int gdb_main_loop(uint32_t &gdbPort, machine &mach)
                         char buf[3];
                         strcat(reply, lowByteToHex(buf, c));
                     }
-cmd_m_out:
+                cmd_m_out:
                     sendGdbReply(newsockfd, reply);
                     i += 2;
                 } break;
