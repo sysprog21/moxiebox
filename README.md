@@ -79,33 +79,33 @@ Example usage of sandbox:
 If you specify the -g <port> option, then sandbox will wait for a GDB
 connection on the given port.  For example, run sandbox like so:
 
-    $ src/sandbox -e tests/basic -g 9999
+    $ src/sandbox -e tests/rtlib -g 9999
     ep 00001000
-    ro 00000f6c-00001536 elf0
-    ro 00001538-00001540 elf1
-    rw 00001640-00001ab4 elf2
-    rw 00002ab4-00012ab4 stack
-    ro 00013ab4-00013b74 mapdesc
+    ro 00000f8c-00001540 elf0
+    rw 00001640-00001aa8 elf1
+    rw 00002aa8-00012aa8 stack
+    ro 00013aa8-00013b48 mapdesc
     
 And, in a separate console, run GDB to connect to sandbox using the
 `target remote` command like so:
 
-    $ moxie-none-moxiebox-gdb -q tests/basic
+    $ moxie-none-moxiebox-gdb -q tests/rtlib
     Reading symbols from basic...done.
     (gdb) target remote :9999
     Remote debugging using :9999
     0x00001000 in __start ()
     (gdb) b main
-    Breakpoint 1 at 0x14c8
+    Breakpoint 1 at 0x13da: file rtlib.c, line 73.
     (gdb) c
     Continuing.
-    
-    Breakpoint 1, 0x000014c8 in main ()
+
+    Breakpoint 1, main (argc=0, argv=0x2) at rtlib.c:73
+    73	{
     (gdb) x/4i $pc
-    => 0x14c8 : xor $r5, $r5
-    0x14ca : mov $r4, $r5
-    0x14cc : lda.l $r3, 0x1644
-    0x14d2 : lda.l $r2, 0x1648
+    => 0x13da <main>:	push	$sp, $r6
+       0x13dc <main+2>:	push	$sp, $r7
+       0x13de <main+4>:	dec	$sp, 0x38
+       0x13e0 <main+6>:	ldi.l	$r2, 0x11
     (gdb)
 
 
